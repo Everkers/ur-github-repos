@@ -1,6 +1,6 @@
 <template>
   <div class='popup-ur'>
-      <div class="box">
+      <div ref='box' class="box">
         <div class="head">
             <img src="../assets/images/pablo-searching.png" alt="">
         </div>
@@ -16,11 +16,19 @@
 </template>
 
 <script>
+import {TimelineLite , Expo} from "gsap"
 export default {
     methods:{
         hidePopUp(){
             this.$store.commit('showPopUp')
         }
+    },
+    mounted(){
+        const {box} = this.$refs
+        const tl = new TimelineLite();
+        setTimeout(()=>{
+            tl.to(box , 0.9 , {y:0 , opacity:1 , ease: Expo.easeOut} )
+        } , 300)
     }
 
 }
