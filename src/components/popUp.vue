@@ -9,7 +9,7 @@
         </div>
         <div class="buttons">
             <button @click='hidePopUp()' class='button  button--main'>Understood</button>
-            <button class='button  '>Github Repo</button>
+            <a href="https://github.com/Everkers/ur-github-repos" target="_blank"><button class='button  '>Github Repo</button></a>
         </div>
       </div>
   </div>
@@ -21,6 +21,13 @@ export default {
     methods:{
         hidePopUp(){
             this.$store.commit('showPopUp')
+        }
+    },
+    created(){
+        document.onkeydown = e =>{
+            if(e.keyCode == 27){
+            this.$store.commit('showPopUp')
+            }
         }
     },
     mounted(){

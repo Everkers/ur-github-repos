@@ -12,6 +12,7 @@
     animation-fill-mode: forwards; 
     .box{
         width:42em;
+        margin:0 2em;
         border-radius:.8em;
         background-color: #fff;
         padding:2em 0;
@@ -22,12 +23,20 @@
             text-align: center;
             padding-top: 1.8em;
             img{
+                @media screen and (max-width:893px){
+                    width:15em;
+                }
                 width:19em;
             }
         }
         .text{
             text-align: center;
             padding:2.8em .8em;
+            p{
+                @media screen and (max-width:893px){
+                    font-size:.8em;
+                }
+            }
         }
         .buttons{
             display: flex;
