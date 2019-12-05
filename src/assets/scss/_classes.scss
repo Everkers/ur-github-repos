@@ -1,0 +1,15 @@
+.button{
+    border:0;
+    color:#fff;
+    padding:.7em 2em;
+    border-radius:.5em;
+    outline: none !important;
+    transition: all ease 500ms;
+}
+.button--main-bold{
+    background-color:$main;
+    font-weight:700;
+}
+.button--main{
+    background-color:$main;
+}

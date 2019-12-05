@@ -1,0 +1,53 @@
+.repo-ur{
+    display: flex;
+    margin:5em 0;
+    flex-wrap: wrap;
+    @media screen and (max-width:893px){
+        align-items: center;
+        justify-content: center;
+    }
+    .left_avatar{
+        width:15em;
+        height:15em;
+        border-radius: .8em;
+        margin-right: 1.8em;
+        overflow: hidden;
+        // box-shadow: 6px 2px 20px 5px #b8b3b3;    
+        img{
+            width:100%;
+            height:100%;
+            object-fit: cover;
+        }
+    }
+
+    .right_info{
+        @media screen and (max-width:893px){
+            text-align: center;
+            margin-top:2em;
+        }
+        .head{
+            h3{
+                line-height:0.8 ;
+            }
+            span{
+                font-weight:lighter;
+            }
+            margin-bottom: .9em;
+        }
+        .description{
+            p{
+                max-width:600px;
+                // font-weight:500;
+            }
+        }
+        .stats{
+            button{
+                font-size:13px;
+            }
+            button:first-child{
+                margin-right:1.1em;
+            }
+        }
+    }
+
+}
