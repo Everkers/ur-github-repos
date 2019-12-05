@@ -5,11 +5,16 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    popUp:false
   },
   mutations: {
+    showPopUp(state){
+      state.popUp = !state.popUp
+    }
   },
-  actions: {
-  },
-  modules: {
+  getters:{
+    popUp(state){
+      return state.popUp
+    }
   }
 })

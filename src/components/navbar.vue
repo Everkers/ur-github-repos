@@ -7,7 +7,7 @@
         </b-navbar-brand>
 
         <b-navbar-nav class="ml-auto">
-            <button class='button button--main-bold'>About the project</button>
+            <button @click="showAbout()" class='button button--main-bold'>About the project</button>
         </b-navbar-nav>
     </b-container>
 
@@ -16,7 +16,11 @@
 
 <script>
 export default {
-
+  methods:{
+    showAbout(){
+      this.$store.commit('showPopUp')
+    }
+  }
 }
 </script>
 
