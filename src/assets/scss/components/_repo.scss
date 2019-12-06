@@ -1,14 +1,14 @@
 .repo-ur{
     display: flex;
     margin:5em 0;
-    flex-wrap: wrap;
     @media screen and (max-width:893px){
+        flex-direction: column;
         align-items: center;
         justify-content: center;
     }
     .left_avatar{
-        width:15em;
-        height:15em;
+        width:11em;
+        height:11em;
         border-radius: .8em;
         margin-right: 1.8em;
         @media screen and (max-width:893px){
@@ -38,12 +38,15 @@
             margin-bottom: .9em;
         }
         .description{
+            max-width:600px;
             p{
-                max-width:600px;
+                display: inline;
                 // font-weight:500;
             }
+
         }
         .stats{
+            margin-top:1.1em;
             button{
                 font-size:13px;
             }
