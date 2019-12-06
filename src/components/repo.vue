@@ -15,8 +15,8 @@
               <a @click.prevent = 'more()' href="#" v-if="readMore">{{showMore ? 'Read Less' : 'Read More'}}</a>
           </div>
           <div class="stats">
-              <button class='button button--main'>Stars : {{toThousands(repoStars)}}</button>
-              <button class='button button--main'>Issues : {{toThousands(repoIssues)}}</button>
+              <button :title='repoStars' class='button button--main'>Stars : {{toThousands(repoStars)}}</button>
+              <button :title='repoIssues'class='button button--main'>Issues : {{toThousands(repoIssues)}}</button>
           </div>
       </div>
   </div>
@@ -63,12 +63,14 @@ export default {
             }
         },
         descriptionFormater(description){
-            const words = description.split(' ');
-            if(words.length >= 26){
-                this.readMore = true
-                return description.slice(0 , this.sliceLength) + ' '
+            if(description != null){
+                const words = description.split(' ');
+                if(words.length >= 26){
+                    this.readMore = true
+                    return description.slice(0 , this.sliceLength) + ' '
+                }
+                return description
             }
-            return description
         }
     }
 
