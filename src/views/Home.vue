@@ -1,7 +1,9 @@
 <template>
   <div class="home-ur">
       <b-container class='pl-md-0'>
-          <h1 v-if='!loading && !error' class='text-center text-sm-left' style="max-width:600px">Most startted GitHub repos  in the last 30 days</h1> 
+          <div :class="{'header' : showHeader}">
+          <h1 v-if='!loading && !error' class='text-center text-sm-left text' style="max-width:600px">Most startted GitHub repos  in the last 30 days</h1> 
+          </div>
           <b-row v-if='error' class='error' >
               <img src="../assets/images/pablo-come-back-later.png" alt="">
               <h4>An error occurred in <br> loading this content</h4>
@@ -49,7 +51,8 @@ export default {
             repos:[],
             created:'',
             error:false,
-            page:1
+            page:1,
+            showHeader : false
             
         }
     },
@@ -58,6 +61,9 @@ export default {
         InfiniteLoading
     },
     methods:{
+        handleScroll(){
+            window.scrollY > 141 ? this.showHeader = true  : this.showHeader = false
+        },
          async infiniteHandler($state){
            try{
             const data = await axios.get(api ,
@@ -101,12 +107,15 @@ export default {
         }
     },
     mounted(){
+        window.addEventListener('scroll' , this.handleScroll)
         const date = 
         new Date(new Date().setDate(new Date().getDate() - 30)) //get the current date - 30 days 
         .toISOString().split('T')[0] //split to get the date on iso format only 
         this.created = date
         this.getRepos()
-    }
+    },
+    destroy() {
+    window.removeEventListener('scroll', this.handleScroll)}
 
 }
 </script>
