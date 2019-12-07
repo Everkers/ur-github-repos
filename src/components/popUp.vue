@@ -11,7 +11,7 @@
 
         <!-- alert content -->
         <div class="text">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis aut veritatis cupiditate vero velit incidunt doloremque ea fugit beatae. Earum fugiat esse, nemo quis, eligendi laudantium tempora sequi ratione numquam molestias incidunt officiis soluta. In dolores, laudantium itaque unde illo nam voluptatibus earum iusto quidem qui, eaque accusantium veniam dolor.</p>
+            <p>A simple website to get the most starred repositories in the last 30 days, you can get all the essential pieces of information about the repository without any effort and on a clean way </p>
         </div>
         <!-- end alert content -->
 
