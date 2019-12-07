@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '@/views/home'
+import mostStarredRepos from '../views/mostStarredRepos'
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: Home
+    name: 'Most Starred Repos',
+    component: mostStarredRepos
   },
 ]
 
