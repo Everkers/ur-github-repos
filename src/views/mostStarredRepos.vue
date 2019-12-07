@@ -2,7 +2,7 @@
   <div class="home-ur">
       <b-container class='pl-md-0'>
           <div v-if='!loading && !error' :class="{'header' : showHeader}">
-          <h1  class='text-center text-sm-left text' style="max-width:600px">Most startted GitHub repos  in the last 30 days</h1> 
+          <h1  class='text-center text-sm-left text' style="max-width:600px">Most starred GitHub repos  in the last 30 days</h1> 
           </div>
           <b-row v-if='error' class='error' >
               <img src="../assets/images/pablo-come-back-later.png" alt="">
