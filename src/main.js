@@ -13,7 +13,7 @@ Vue.use(BootstrapVue)
 
 Vue.config.productionTip = false
 
-//components declaration
+//components 
 
 Vue.component('navbar-ur' ,  Navbar)
 Vue.component('repo-ur' ,  Repo)

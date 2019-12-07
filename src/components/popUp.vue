@@ -1,40 +1,58 @@
 <template>
+<!-- Start Pop Up Container -->
   <div class='popup-ur'>
+      <!-- start box -->
       <div ref='box' class="box">
+        <!-- alert image  -->
         <div class="head">
             <img src="../assets/images/pablo-searching.png" alt="">
         </div>
+        <!-- end alert image -->
+
+        <!-- alert content -->
         <div class="text">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis aut veritatis cupiditate vero velit incidunt doloremque ea fugit beatae. Earum fugiat esse, nemo quis, eligendi laudantium tempora sequi ratione numquam molestias incidunt officiis soluta. In dolores, laudantium itaque unde illo nam voluptatibus earum iusto quidem qui, eaque accusantium veniam dolor.</p>
         </div>
+        <!-- end alert content -->
+
+        <!-- alert buttons container -->
         <div class="buttons">
+
+            <!-- onclick on undertood button the pop up will dispear  -->
             <button @click='hidePopUp()' class='button  button--main'>Understood</button>
+            <!-- onclick on GitHub link to original repo -->
             <a href="https://github.com/Everkers/ur-github-repos" target="_blank"><button class='button  '>Github Repo</button></a>
+
         </div>
+        <!-- end alert buttons container -->
+
+
       </div>
+      <!-- end box  -->
   </div>
+<!-- End Pop Up Container -->
 </template>
 
 <script>
-import {TimelineLite , Expo} from "gsap"
+import {TimelineLite , Expo} from "gsap" //import timelinelite and expo ease from gsap module for animation
 export default {
-    methods:{
+    methods:{ //this method will head the popUp
         hidePopUp(){
             this.$store.commit('showPopUp')
         }
     },
-    created(){
+    created(){ // if the user click on (esc) button the popUp should dispear
         document.onkeydown = e =>{
             if(e.keyCode == 27){
-            this.$store.commit('showPopUp')
+                this.$store.state.popUp = false //hide popUp
             }
         }
     },
-    mounted(){
-        const {box} = this.$refs
-        const tl = new TimelineLite();
-        setTimeout(()=>{
-            tl.to(box , 0.9 , {y:0 , opacity:1 , ease: Expo.easeOut} )
+    mounted(){ 
+        const {box} = this.$refs //get alert box from refs
+        const tl = new TimelineLite(); //create new instance from the timelinelite
+        setTimeout(()=>{ //after 300ms 
+            tl.to(box , 0.9 , {y:0 , opacity:1 , ease: Expo.easeOut} ) //slideUp the box and adjust the opacity 
         } , 300)
     }
 
