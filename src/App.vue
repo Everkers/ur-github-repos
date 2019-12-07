@@ -2,7 +2,7 @@
   <div id="app">
     <popup-ur v-if='showAbout'/>
     <navbar-ur/>
-    <router-view/>
+    <home-ur/>
   </div>
 </template>
 
